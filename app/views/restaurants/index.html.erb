@@ -1,0 +1,10 @@
+<h1>All restaurants</h1>
+
+<ul class="list-group">
+  <% @restaurants.each do |restaurant| %>
+  <li class= "list-group-item list-group-item-info flexbox-between">
+    <%= link_to restaurant.name, restaurant_path(restaurant) %>
+    <%= '👍' * (restaurant.reviews.map { |review| review.rating }.sum / (restaurant.reviews.size)) %>
+  </li>
+  <% end %>
+</ul>

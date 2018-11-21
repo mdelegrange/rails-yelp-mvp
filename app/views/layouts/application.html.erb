@@ -12,6 +12,18 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div class="navbar-wagon">
+      <!-- Logo -->
+      <%= link_to "My Yelp MVP", restaurants_path  %>
+      <!-- Right Navigation -->
+      <div class="navbar-wagon-right hidden-xs hidden-sm">
+        <%= link_to "Add a restaurant", new_restaurant_path, class: "btn btn-warning" %>
+      </div>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+    <br>
   </body>
 </html>

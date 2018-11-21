@@ -1,0 +1,20 @@
+<h1><%= @restaurant.name %></h1>
+<h2>Infos</h2>
+<hr>
+<p>Address: <%= @restaurant.address %></p>
+<p>Phone number: <%= @restaurant.phone_number %></p>
+<p>Category: <%= @restaurant.category %></p>
+<h2>Reviews</h2>
+<hr>
+  <ul class='list-group'>
+<% @restaurant.reviews.each do |review| %>
+    <li class='list-group-item list-group-item-warning flexbox-between'>
+      <%= review.content%>
+      <p><%= '👍' * review.rating%></p>
+    </li>
+    <% end %>
+  </ul>
+
+<%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: 'btn btn-warning' %>
+<hr>
+<%= link_to 'Back to all restaurants', restaurants_path %>

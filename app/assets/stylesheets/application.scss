@@ -13,3 +13,11 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+.flexbox-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
